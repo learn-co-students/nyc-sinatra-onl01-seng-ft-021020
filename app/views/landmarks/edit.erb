@@ -1,6 +1,32 @@
 <h2>Edit Historical Landmark</h2>
 
-<!-- add content here -->
+<form action='/landmarks' method='post'>
+  <input type="hidden" id="hidden" name="_method" value="patch">
+  <input type="hidden" id="hidden" name="lid" value="<%= @landmark.id %>">
+  <label for='landmark_name'>Landmark Name: </label>
+  <input type='text' id='name' name=landmark[name] value="<%= @landmark.name %>">
+  <br>
+
+  <label for='landmark_year_completed'>Year Completed: </label>
+  <input type='text' id='year_completed' name=landmark[year_completed] value="<%= @landmark.year_completed %>">
+  <br>
+
+  <h3>Figure</h3>
+
+  <% @figures.each do |figure| %>
+    <label for="<%= figure.id %>"><%= figure.name %></label>
+    <input type="radio" id="<%= figure.id %>" name=not_used[:figure_id] value=<%= figure.id %>>
+  <% end %>
+  <br><br>
+
+  <label for='figure_name'>New Figure</label>
+  <input type='text' id='figure_name' name=not_used[:figure_name]>
+  <br><br>
+
+  <input type='submit' value='Edit Landmark'>
+
+</form>
+<br>
 
 <a class="button" href="/landmarks">Landmarks</a>
 <a class="button" href="/">Home</a>

@@ -13,4 +13,6 @@ gem 'rspec'
 gem 'rack-test'
 gem 'sinatra-twitter-bootstrap', :require => 'sinatra/twitter-bootstrap'
 gem 'capybara'
+gem 'rails-erd'
 gem 'require_all'
+
